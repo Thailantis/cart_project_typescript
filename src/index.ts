@@ -48,7 +48,7 @@ cartHTMLElement() {
         removeOneButton.textContent = 'Please remove one item from the shopping cart.';
         removeOneButton.id = `remove-one-${item.uuid}`;
         itemDiv.appendChild(removeOneButton);
-
+      
         const removeAllButton = document.createElement('button');
         removeAllButton.textContent = 'Please remove all items from the shopping cart.';
         removeAllButton.id = `remove-all-${item.uuid}`;
@@ -73,4 +73,40 @@ addRemoveEventListeners() {
             this.removeFromCart(item);
         });
     });
+}
+
+class Item {
+    constructor(name, description, price, uuid) {
+      this.name = name;
+      this.description = description;
+      this.price = price;
+      this.uuid = uuid;
+}
+
+itemElement() {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'item';
+
+    const itemName = document.createElement('h3');
+    itemName.textContent = this.name;
+    itemDiv.appendChild(itemName);
+
+    const itemDescription = document.createElement('p');
+    itemDescription.textContent = this.description;
+    itemDiv.appendChild(itemDescription);
+
+    const itemPrice = document.createElement('p');
+    itemPrice.textContent = `Price: $${this.price}`;
+    itemDiv.appendChild(itemPrice);
+
+    const addToCartButton = document.createElement('button');
+    itemPrice.textContent = 'Add to Cart';
+    itemDiv.appendChild(addToCartButton);
+
+    addToCartButton.addEventListener('click', () => {
+        Shop.myUser.addToCart(this);
+        Shop.updateCart();
+    });
+    return itemDiv;
+   }
 }
