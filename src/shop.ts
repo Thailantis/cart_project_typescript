@@ -41,20 +41,6 @@ class Shop {
         }
     }
 
-    static loginUser(event) {
-        event.preventDefault();
-        const nameInput = document.getElementbyId('name');
-        const ageInput = document.getElementbyId('age');
-        const name = nameInput.value.trim();
-        const age = parseInt(ageInput.value.trim());
-      
-        if (name && age) {
-          const user = new User("Marge Simpson", 36);
-          Shop.myUser = user;
-          Shop.createShopAndCart();
-        }
-      }
-
     static createShopAndCart() {
         const shop = new Shop();
         const cartDiv = document.createElement('div');
@@ -62,3 +48,18 @@ class Shop {
         document.body.appendChild(cartDiv);
     }
 }
+
+// This is removed due to being a duplicate.
+//     static loginUser(event) {
+//         event.preventDefault();
+//         const nameInput = document.getElementbyId('name');
+//         const ageInput = document.getElementbyId('age');
+//         const name = nameInput.value.trim();
+//         const age = parseInt(ageInput.value.trim());
+      
+//         if (name && age) {
+//           const user = new User("Marge Simpson", 36);
+//           Shop.myUser = user;
+//           Shop.createShopAndCart();
+//         }
+//       }
