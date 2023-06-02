@@ -3,13 +3,13 @@ import Item from './Item';
 import Shop from './Shop';
 
 class User {
-  constructor(name, age) {
+  constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
     this.cart = [];
 }
 
-static loginUser(event) {
+static loginUser(event: Event) {
   event.preventDefault();
   const nameInput = document.getElementbyId('name');
   const ageInput = document.getElementbyId('age');
