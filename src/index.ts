@@ -1,7 +1,6 @@
-from src import User
-from src import Item
-from src import Shop
-import {v4 as uuidv4} from 'uuid';
+import User from './User';
+import Item from './Item';
+import Shop from './Shop';
 
 class User {
   constructor(name, age) {
