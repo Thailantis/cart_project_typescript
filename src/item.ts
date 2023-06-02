@@ -23,7 +23,7 @@ itemElement() {
     itemDiv.appendChild(itemPrice);
 
     const addToCartButton = document.createElement('button');
-    itemPrice.textContent = 'Add to Cart';
+    addToCartButton.textContent = 'Add to Cart';
     itemDiv.appendChild(addToCartButton);
 
     addToCartButton.addEventListener('click', () => {
